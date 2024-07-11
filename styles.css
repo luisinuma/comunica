@@ -1,0 +1,122 @@
+body {
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ba55d3);
+    background-size: 300% 300%;
+    color: white;
+    margin: 0;
+    overflow: hidden;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 0.3;
+    animation: float 20s linear infinite;
+}
+
+.icon:nth-child(1) { top: 10%; left: 20%; animation-duration: 15s; }
+.icon:nth-child(2) { top: 30%; left: 70%; animation-duration: 25s; }
+.icon:nth-child(3) { top: 60%; left: 40%; animation-duration: 20s; }
+.icon:nth-child(4) { top: 80%; left: 80%; animation-duration: 30s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+#game-container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #ff1493;
+}
+
+#progress-bar {
+    height: 20px;
+    background: #ff1493;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#level-indicator {
+    margin: 20px 0;
+}
+
+.choice {
+    background: #8a2be2;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.choice:hover {
+    background: #6a0dad;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #000;
+}
